@@ -9,7 +9,7 @@ Dieses Repository enthält ein fertiges MERN-Stack-System (MongoDB, Express, Rea
 ## Installation
 1. Repository klonen und Abhängigkeiten installieren
    ```bash
-   git clone <REPO-URL>
+   git clone https://github.com/AWEplaysStuff/wg-fundburo/tree/codex/fundb%C3%BCro-system-f%C3%BCr-wilhelm-gymnasium-anpassen
    cd wg-fundburo
    cd server && npm install
    cd ../client && npm install
