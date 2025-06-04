@@ -1,65 +1,47 @@
-This project is live at https://successdbms.netlify.app/
-Below is a the instruction for a MERN (MongoDB, Express.js, React, Node.js) stack application with server.js and app.js that builds up the lost and found management system
+# Fundbüro-System des Wilhelm-Gymnasiums Braunschweig
 
-```markdown
-# Lost and found management system Application
+Dieses Repository enthält ein fertiges MERN-Stack-System (MongoDB, Express, React, Node.js) zum Verwalten von gefundenen und verlorenen Gegenständen am Wilhelm‑Gymnasium Braunschweig.
 
-Welcome to our MERN stack application! This application is built using MongoDB, Express.js, React, and Node.js.
+## Projektstruktur
+- `server/` – Node.js Backend mit Express und MongoDB
+- `client/` – React Frontend
 
-## Project Structure
-
-- `server.js`: This file contains the server-side logic using Node.js and Express.js. It handles API requests, connects to the MongoDB database, and serves as the backend for the application.
-
-- `app.js`: This is the entry point for the React frontend. It houses the client-side logic and components, providing the user interface for the application.
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js and npm: Make sure you have Node.js and npm installed on your machine.
-
-### Installation
-
-1. Clone the repository:
+## Installation
+1. Repository klonen und Abhängigkeiten installieren
    ```bash
-   git clone https://github.com/your-username/your-mern-app.git
-   cd your-mern-app
+   git clone <REPO-URL>
+   cd wg-fundburo
+   cd server && npm install
+   cd ../client && npm install
    ```
-
-2. Install dependencies for both the server and client:
+2. In `server/.env` folgende Variablen definieren
+   ```
+   mongoURI=<Ihre MongoDB URL>
+   SECRETKEY=<geheimes JWT Token>
+   ADMIN_EMAIL=<admin E‑Mail>
+   ADMIN_PASSWORD=<admin Passwort>
+   ```
+3. Admin-Benutzer erzeugen
    ```bash
    cd server
-   npm install
-   cd ../client
-   npm install
+   node adminSeeder.js
    ```
 
-### Running the Application
+## Anwendung starten
+- Backend
+  ```bash
+  cd server
+  node server.js
+  ```
+- Frontend in neuem Terminal
+  ```bash
+  cd client
+  npm start
+  ```
+Die Anwendung läuft anschließend unter `http://localhost:3000`.
 
-1. Start the server:
-   ```bash
-   cd server
-   node server.js
-   ```
+## Anmeldung als Admin
+Nach dem Ausführen des Seed-Skripts können Sie sich mit den in `.env` angegebenen Zugangsdaten anmelden. Admin‑Benutzer besitzen die Rolle `admin` und können alle Daten einsehen und bearbeiten.
 
-2. In a separate terminal, start the client:
-   ```bash
-   cd client
-   npm start
-   ```
-
-The application should now be running on `http://localhost:3000`.
-
-## Configuration
-
-- **Database**: Configure your MongoDB connection string in `server.js`.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Special thanks to the MERN stack community for their valuable contributions and resources.
-
-```
+## Lizenz
+MIT

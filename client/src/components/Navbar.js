@@ -97,43 +97,43 @@ const Navbar = () => {
       <div>
         <div style={linkContainerStyle}>
           <Link to="/home" style={linkStyle}>
-            Home
+            Startseite
           </Link>
           {user && (
             <>
               <Link to="/my-items" style={linkStyle}>
-                My Items
+                Meine Gegenstände
               </Link>
               <Link to="/all-items" style={linkStyle}>
-                All Items
+                Alle Gegenstände
               </Link>
               <Link to="/all-items/lost" style={linkStyle}>
-                Lost
+                Verloren
               </Link>
               <Link to="/all-items/found" style={linkStyle}>
-                Found
+                Gefunden
               </Link>
               <Link to="/raise-a-concern" style={linkStyle}>
-                Raise a concern
+                Meldung erstellen
               </Link>
               <Link to="/helpers" style={linkStyle}>
-                Helpers
+                Helfer
               </Link>
               <Link to="/claimants" style={linkStyle}>
-                Claimers
+                Abholer
               </Link>
               <Link to="/" style={linkStyle} onClick={handleLogout}>
-                Logout
+                Abmelden
               </Link>
             </>
           )}
           {!user && (
             <>
               <Link to="/sign-up" style={linkStyle}>
-                Sign Up
+                Registrieren
               </Link>
               <Link to="/sign-in" style={linkStyle}>
-                Sign In
+                Anmelden
               </Link>
             </>
           )}
@@ -144,43 +144,43 @@ const Navbar = () => {
       </div>
       <div style={menuStyle}>
         <Link to="/home" style={linkStyle}>
-          Home
+          Startseite
         </Link>
         {user && (
           <>
             <Link to="/my-items" style={linkStyle}>
-              My Items
+              Meine Gegenstände
             </Link>
             <Link to="/all-items" style={linkStyle}>
-              All Items
+              Alle Gegenstände
             </Link>
             <Link to="/all-items/lost" style={linkStyle}>
-              Lost
+              Verloren
             </Link>
             <Link to="/all-items/found" style={linkStyle}>
-              Found
+              Gefunden
             </Link>
             <Link to="/raise-a-concern" style={linkStyle}>
-              Raise a concern
+              Meldung erstellen
             </Link>
             <Link to="/helpers" style={linkStyle}>
-              Helpers
+              Helfer
             </Link>
             <Link to="/claimants" style={linkStyle}>
-              Claimers
+              Abholer
             </Link>
             <Link to="/" style={linkStyle} onClick={handleLogout}>
-              Logout
+              Abmelden
             </Link>
           </>
         )}
         {!user && (
           <>
             <Link to="/sign-up" style={linkStyle}>
-              Sign Up
+              Registrieren
             </Link>
             <Link to="/sign-in" style={linkStyle}>
-              Sign In
+              Anmelden
             </Link>
           </>
         )}

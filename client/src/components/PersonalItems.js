@@ -64,14 +64,14 @@ const PersonalItems = (props) => {
     <>
       <Navbar />
       <div style={componentPadding}>
-        <h1>My Items {props.req}:</h1>
+        <h1>Meine Gegenstände {props.req}:</h1>
         <h3>
-          *If your items ain't visible, make sure you raise a concern before.*
+          *Falls Ihre Gegenstände nicht sichtbar sind, melden Sie diese zuerst.*
         </h3>
         {isLoading ? (
           <Spinner />
         ) : items.length === 0 ? (
-          <p>No lost or found items found</p>
+          <p>Keine Einträge vorhanden</p>
         ) : (
           items.map((item) => renderItem(item))
         )}

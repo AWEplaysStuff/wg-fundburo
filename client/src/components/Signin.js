@@ -44,9 +44,9 @@ function Signin() {
       });
 
       if (res.status === 401) {
-        alert("Invalid Credentials");
+        alert("Ungültige Anmeldedaten");
       } else if (res.status === 500) {
-        alert("Internal Server Error");
+        alert("Serverfehler");
       }
 
       const token = res.data.token;
@@ -58,11 +58,11 @@ function Signin() {
           password: password,
         })
       );
-      alert("Successfully signed in, you can now raise your concerns!");
+      alert("Erfolgreich angemeldet, Sie können nun Meldungen erstellen!");
       navigate("/home");
     } catch (error) {
       console.error("Error during login:", error);
-      alert("Wrong Credentials. Please try again.");
+      alert("Falsche Anmeldedaten. Bitte erneut versuchen.");
     } finally {
       setLoading(false); // Set loading state to false after login attempt completes
     }
@@ -72,27 +72,27 @@ function Signin() {
     <>
       <Navbar />
       <div className="signin-container">
-        <h2>Sign In</h2>
+        <h2>Anmelden</h2>
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">E-Mail:</label>
           <input
             type="email"
             id="email"
             name="email"
             value={email}
             onChange={handleEmailChange}
-            placeholder="Enter your email"
+            placeholder="E-Mail eingeben"
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Passwort:</label>
           <input
             type="password"
             id="password"
             name="password"
             value={password}
             onChange={handlePasswordChange}
-            placeholder="Enter your password"
+            placeholder="Passwort eingeben"
           />
         </div>
         <div>
@@ -101,12 +101,12 @@ function Signin() {
             onClick={handleSignIn}
             disabled={loading}
           >
-            {loading ? <Spinner /> : "Sign In"}{" "}
+            {loading ? <Spinner /> : "Anmelden"}{" "}
             {/* Show Spinner component when loading */}
           </button>
-          <p className="btn-spread">Not a member?</p>
+          <p className="btn-spread">Noch kein Konto?</p>
           <button className="btn-signin" onClick={handleNavigateToSignUp}>
-            Sign Up
+            Registrieren
           </button>
         </div>
       </div>

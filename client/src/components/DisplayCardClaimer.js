@@ -20,25 +20,25 @@ const DisplayCardClaimer = ({ claimant, number }) => {
 
   return (
     <div style={cardStyle}>
-      <h2>Claimant Details:</h2>
-      <h2>No. {number}</h2>
+      <h2>Details des Abholers:</h2>
+      <h2>Nr. {number}</h2>
       <p>
-        <strong>Claimant Name:</strong> {claimantname}
+        <strong>Name des Abholers:</strong> {claimantname}
       </p>
       <p>
-        <strong>Item Claimed:</strong> {itemdetails}
+        <strong>Beanspruchter Gegenstand:</strong> {itemdetails}
       </p>
       <p>
-        <strong>Mobile Number:</strong> {mobilenumber}
+        <strong>Handynummer:</strong> {mobilenumber}
       </p>
       <p>
-        <strong>Hostel Name:</strong> {hostelname}
+        <strong>Ort:</strong> {hostelname}
       </p>
       <p>
-        <strong>Proof of Claim:</strong> {proofofclaim}
+        <strong>Nachweis:</strong> {proofofclaim}
       </p>
       <p>
-        <strong>Date:</strong> {new Date(date).toLocaleString()}
+        <strong>Datum:</strong> {new Date(date).toLocaleString()}
       </p>
     </div>
   );

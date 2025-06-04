@@ -43,7 +43,7 @@ function Signup() {
     setLoading(true);
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert("Passwörter stimmen nicht überein");
       return;
     }
 
@@ -58,21 +58,21 @@ function Signup() {
       const res = await axios.post(`${Base_URL}/signup`, data);
 
       if (res.status === 201) {
-        alert("Successfully registered, proceed to login!");
+        alert("Erfolgreich registriert, bitte anmelden!");
         setLoading(false);
         navigate("/sign-in");
       } else {
-        alert("Registration failed. Please try again.");
+        alert("Registrierung fehlgeschlagen. Bitte erneut versuchen.");
       }
     } catch (error) {
       if (error.response && error.response.status === 409) {
-        alert("Email already exists. Please use a different email.");
+        alert("E-Mail existiert bereits. Bitte eine andere verwenden.");
       } else {
         console.error(
           "Error during signup:",
           error.response ? error.response.data : error.message
         );
-        alert("An error occurred during signup. Please try again.");
+        alert("Fehler bei der Registrierung. Bitte erneut versuchen.");
       }
     } finally {
       setLoading(false); // Set loading state to false after login attempt completes
@@ -83,7 +83,7 @@ function Signup() {
     <>
       <Navbar />
       <div className="card signup-card">
-        <h2>Sign Up</h2>
+        <h2>Registrieren</h2>
         <form onSubmit={handleSignUp}>
           <div className="form-group">
             <label htmlFor="name">Name:</label>
@@ -97,7 +97,7 @@ function Signup() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="name">Roll No:</label>
+            <label htmlFor="name">Kennung:</label>
             <input
               type="text"
               id="rollno"
@@ -108,7 +108,7 @@ function Signup() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">E-Mail:</label>
             <input
               type="email"
               id="email"
@@ -119,7 +119,7 @@ function Signup() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Passwort:</label>
             <input
               type="password"
               id="password"
@@ -130,7 +130,7 @@ function Signup() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password:</label>
+            <label htmlFor="confirmPassword">Passwort wiederholen:</label>
             <input
               type="password"
               id="confirmPassword"
@@ -146,7 +146,7 @@ function Signup() {
             onClick={handleSignUp}
             disabled={loading}
           >
-            {loading ? <Spinner /> : "Sign Up"}{" "}
+            {loading ? <Spinner /> : "Registrieren"}{" "}
             {/* Show Spinner component when loading */}
           </button>
         </form>

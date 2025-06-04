@@ -79,7 +79,7 @@ const FoundItems = (props) => {
 
   const handleSubmitClaim = async (_id) => {
     if (!proofOfClaim) {
-      alert("Please provide proof of claim.");
+      alert("Bitte einen Nachweis angeben.");
       return;
     }
 
@@ -94,11 +94,11 @@ const FoundItems = (props) => {
     try {
       await axios.post(`${Base_URL}/claimant`, data);
       alert(
-        "The item has been successfully claimed. Please ensure that you have not claimed someone else's item. If you have mistakenly done so, kindly resubmit it using the 'found' option."
+        "Der Gegenstand wurde erfolgreich beansprucht. Bitte stellen Sie sicher, dass es wirklich Ihrer ist."
       );
       await axios.delete(`${Base_URL}/item/${_id}`);
       closeModal();
-      alert("Item has been successfully removed!");
+      alert("Gegenstand wurde erfolgreich entfernt!");
     } catch (error) {
       console.error("Error submitting claim:", error);
     }
@@ -108,13 +108,13 @@ const FoundItems = (props) => {
     <div style={boxStyle}>
       <div>
         <h2>Name: {item.itemname}</h2>
-        <p>Description: {item.itemdescription}</p>
+        <p>Beschreibung: {item.itemdescription}</p>
         <p>
-          This item has been <b>{item.concerntype}</b>
+          Dieser Gegenstand wurde <b>{item.concerntype}</b>
         </p>
         {item.images && item.images.length > 0 && (
           <div>
-            <p>Images:</p>
+            <p>Bilder:</p>
             {item.images.map((image, index) => (
               <img key={index} src={image} alt="png" style={imageStyle} />
             ))}
@@ -122,7 +122,7 @@ const FoundItems = (props) => {
         )}
       </div>
       <button onClick={handleClaim} style={btnStyle}>
-        Claim
+        Beanspruchen
       </button>
 
       {isModalOpen && (
@@ -135,7 +135,7 @@ const FoundItems = (props) => {
             >
               &times;
             </span>
-            <h3>Enter Your Information</h3>
+            <h3>Ihre Daten eingeben</h3>
             <input
               type="text"
               placeholder="Name"
@@ -145,14 +145,14 @@ const FoundItems = (props) => {
             />
             <input
               type="text"
-              placeholder="Mobile Number"
+              placeholder="Handynummer"
               style={inputStyle}
               value={userMobile}
               onChange={(e) => setUserMobile(e.target.value)}
             />
             <input
               type="text"
-              placeholder="Hostel Name"
+              placeholder="Ort"
               style={inputStyle}
               value={userHostel}
               onChange={(e) => setUserHostel(e.target.value)}
@@ -160,7 +160,7 @@ const FoundItems = (props) => {
             {item.concerntype === "found" && (
               <input
                 type="text"
-                placeholder="Proof of Claim"
+                placeholder="Nachweis"
                 style={inputStyle}
                 value={proofOfClaim}
                 onChange={(e) => setProofOfClaim(e.target.value)}
@@ -170,7 +170,7 @@ const FoundItems = (props) => {
               onClick={() => handleSubmitClaim(item._id)}
               style={btnStyleSubmit}
             >
-              Submit Claim
+              Anspruch senden
             </button>
           </div>
         </div>
