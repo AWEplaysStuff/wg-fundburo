@@ -109,7 +109,7 @@ function LostAndFoundForm() {
       setConcernType("lost");
       setImages([]);
 
-      alert("Item has been added successfully");
+      alert("Gegenstand wurde erfolgreich hinzugefügt");
 
       navigate("/my-items/");
     } catch (error) {
@@ -121,10 +121,10 @@ function LostAndFoundForm() {
     <>
       <Navbar />
       <div className="lost-and-found-form">
-        <h2>Report Lost or Found Item</h2>
+        <h2>Verlust oder Fund melden</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="itemname">Item Name:</label>
+            <label htmlFor="itemname">Name des Gegenstands:</label>
             <input
               type="text"
               id="itemname"
@@ -135,7 +135,7 @@ function LostAndFoundForm() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="itemdescription">Item Description:</label>
+            <label htmlFor="itemdescription">Beschreibung des Gegenstands:</label>
             <textarea
               id="itemdescription"
               name="itemdescription"
@@ -145,7 +145,7 @@ function LostAndFoundForm() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="concerntype">Concern Type:</label>
+            <label htmlFor="concerntype">Art der Meldung:</label>
             <select
               id="concerntype"
               name="concerntype"
@@ -154,12 +154,12 @@ function LostAndFoundForm() {
               className="form-group1"
               style={{ maxWidth: "105%" }}
             >
-              <option value="lost">Lost</option>
-              <option value="found">Found</option>
+              <option value="lost">Verloren</option>
+              <option value="found">Gefunden</option>
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="proofPhotos">Proof Photos:</label>
+            <label htmlFor="proofPhotos">Fotobeweise:</label>
             <input
               type="file"
               id="proofPhotos"
@@ -170,7 +170,7 @@ function LostAndFoundForm() {
             />
             {images.length > 0 && (
               <>
-                <b>Preview:</b>
+                <b>Vorschau:</b>
                 <div className="image-preview">
                   {images.map((img, index) => (
                     <img
@@ -190,7 +190,7 @@ function LostAndFoundForm() {
             type="submit"
             onClick={handleSubmit}
           >
-            Submit
+            Absenden
           </button>
         </form>
       </div>

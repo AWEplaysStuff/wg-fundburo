@@ -30,11 +30,11 @@ const ClaimantList = () => {
     <>
       <Navbar />
       <div>
-        <h1>Claimants List:</h1>
+        <h1>Liste der Abholer:</h1>
         {isLoading ? (
           <Spinner />
         ) : claimants.length === 0 ? (
-          <p>No claimants found</p>
+          <p>Keine Abholer gefunden</p>
         ) : (
           claimants.map((claimant, index) => (
             <DisplayCardClaimer

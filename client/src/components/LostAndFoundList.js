@@ -47,14 +47,22 @@ const LostAndFoundList = (props) => {
     <>
       <Navbar />
       <div style={componentPadding}>
-        <h1>Items {props.req}:</h1>
+        <h1>
+          Gegenstände
+          {props.req === "lost"
+            ? " verloren"
+            : props.req === "found"
+            ? " gefunden"
+            : ""}
+          :
+        </h1>
         <h3>
-          *If your items ain't visible, make sure you raise a concern before.*
+          *Falls Ihre Gegenstände nicht sichtbar sind, melden Sie diese zuerst.*
         </h3>
         {loading ? (
           <Spinner />
         ) : items.length === 0 ? (
-          <p>No lost or found items found</p>
+          <p>Keine Einträge vorhanden</p>
         ) : (
           items.map((item) => renderItem(item))
         )}

@@ -53,7 +53,7 @@ const DisplayPersonalItems = (props) => {
 
     try {
       await axios.delete(`${Base_URL}/item/${_id}`, { withCredentials: true });
-      alert("Item has been successfully removed!");
+      alert("Gegenstand wurde erfolgreich entfernt!");
     } catch (error) {
       console.error("Error deleting item:", error);
     } finally {
@@ -65,15 +65,15 @@ const DisplayPersonalItems = (props) => {
     <div style={containerStyle}>
       <div style={contentStyle}>
         <h2>Name: {item.itemname}</h2>
-        <p>Description: {item.itemdescription}</p>
+        <p>Beschreibung: {item.itemdescription}</p>
         <p>
-          This item has been <b>{item.concerntype}</b>
+          Dieser Gegenstand wurde <b>{item.concerntype}</b>
         </p>
       </div>
 
       {item.images && item.images.length > 0 && (
         <div>
-          <p>Images:</p>
+          <p>Bilder:</p>
           {item.images.map((image, index) => (
             <img key={index} src={image} alt="png" style={imageStyle} />
           ))}
@@ -84,7 +84,7 @@ const DisplayPersonalItems = (props) => {
         <Spinner />
       ) : (
         <button onClick={() => handleResolve(item._id)} style={btnStyle}>
-          Resolved
+          Erledigt
         </button>
       )}
     </div>

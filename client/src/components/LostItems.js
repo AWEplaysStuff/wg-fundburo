@@ -84,11 +84,11 @@ const LostItems = (props) => {
 
     await axios.post(`${Base_URL}/helper`, data);
     alert(
-      "Thank you for contributing to the growth of our community. We are temporarily taking this item off the portal, with the hope that your assistance may aid in returning it to its original owner."
+      "Vielen Dank für Ihre Hilfe. Der Gegenstand wird vorübergehend entfernt, damit er an den Besitzer zurückgegeben werden kann."
     );
     await axios.delete(`${Base_URL}/helper/${_id}`);
     closeModal();
-    alert("Item has been successfully removed!");
+    alert("Gegenstand wurde erfolgreich entfernt!");
   };
 
   if (item.concerntype !== "lost") {
@@ -99,13 +99,13 @@ const LostItems = (props) => {
     <div style={boxStyle}>
       <div>
         <h2>Name: {item.itemname}</h2>
-        <p>Description: {item.itemdescription}</p>
+        <p>Beschreibung: {item.itemdescription}</p>
         <p>
-          This item has been <b>{item.concerntype}</b>
+          Dieser Gegenstand wurde <b>{item.concerntype}</b>
         </p>
         {item.images && item.images.length > 0 && (
           <div>
-            <p>Images:</p>
+            <p>Bilder:</p>
             {item.images.map((image, index) => (
               <img key={index} src={image} alt="png" style={imageStyle} />
             ))}
@@ -113,7 +113,7 @@ const LostItems = (props) => {
         )}
       </div>
       <button onClick={handleHelp} style={btnStyle}>
-        Help
+        Helfen
       </button>
 
       {isModalOpen && (
@@ -126,7 +126,7 @@ const LostItems = (props) => {
             >
               &times;
             </span>
-            <h3>Enter Your Information</h3>
+            <h3>Ihre Daten eingeben</h3>
             <input
               type="text"
               placeholder="Name"
@@ -136,14 +136,14 @@ const LostItems = (props) => {
             />
             <input
               type="text"
-              placeholder="Mobile Number"
+              placeholder="Handynummer"
               style={inputStyle}
               value={userMobile}
               onChange={(e) => setUserMobile(e.target.value)}
             />
             <input
               type="text"
-              placeholder="Hostel Name"
+              placeholder="Ort"
               style={inputStyle}
               value={userHostel}
               onChange={(e) => setUserHostel(e.target.value)}
@@ -151,14 +151,14 @@ const LostItems = (props) => {
             {item.concerntype === "found" && (
               <input
                 type="text"
-                placeholder="Proof of Claim"
+                placeholder="Nachweis"
                 style={inputStyle}
                 value={proofOfClaim}
                 onChange={(e) => setProofOfClaim(e.target.value)}
               />
             )}
             <button onClick={handleSubmitHelp(item._id)} style={btnStyleSubmit}>
-              Submit Help
+              Hilfe senden
             </button>
           </div>
         </div>

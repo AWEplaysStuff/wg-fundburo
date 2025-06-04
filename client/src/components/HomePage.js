@@ -93,32 +93,29 @@ const HomePage = () => {
       <Navbar />
       <div style={containerStyle}>
         <h1 style={headingStyle}>
-          Welcome to the Lost and Found Tracking System
+          Wilhelm-Gymnasium Braunschweig - Fundbüro
         </h1>
         {/* Conditionally render based on authentication status */}
         {!user || !userDetails ? (
           <>
-            <p style={paragraphStyle}>Please sign in to continue</p>
+            <p style={paragraphStyle}>Bitte anmelden, um fortzufahren</p>
             <Link to="/sign-in">
               <button className="sign-in-button" style={buttonStyle}>
-                Sign In
+                Anmelden
               </button>
             </Link>
           </>
         ) : (
           <>
-            <p style={paragraphStyle}>
-              Welcome{" "}
-              <b>
-                {userDetails.data.gotUser.username}-(
-                {userDetails.data.gotUser.rollno})
-              </b>
-              , proceed to raising a concern
-            </p>
+              <p style={paragraphStyle}>
+                Willkommen <b>{userDetails.data.gotUser.username}-(
+                {userDetails.data.gotUser.rollno})</b>, Sie können jetzt eine
+                Meldung erstellen
+              </p>
             <Link to="/raise-a-concern">
-              <button className="sign-in-button" style={buttonStyle}>
-                Raise
-              </button>
+                <button className="sign-in-button" style={buttonStyle}>
+                  Meldung
+                </button>
             </Link>
           </>
         )}

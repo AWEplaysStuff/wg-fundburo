@@ -30,11 +30,11 @@ const HelperList = () => {
     <>
       <Navbar />
       <div>
-        <h1>Helpers List:</h1>
+        <h1>Liste der Helfer:</h1>
         {isLoading ? (
           <Spinner />
         ) : helpers.length === 0 ? (
-          <p>*No helpers found*</p>
+          <p>*Keine Helfer gefunden*</p>
         ) : (
           helpers.map((helper, index) => (
             <DisplayCardHelper

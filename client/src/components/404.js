@@ -6,12 +6,12 @@ const NotFound = () => {
   return (
     <>
       <div className="not-found">
-        <h1 className="Error-404">Error-404 :(</h1>
+        <h1 className="Error-404">Fehler 404 :(</h1>
         <p className="error-404-content">
-          Oops! The page you're looking for could not be found.
+          Die Seite konnte nicht gefunden werden.
         </p>
         <NavLink to="/">
-          <button className="back-to-home">Back to Home</button>
+          <button className="back-to-home">Zurück zur Startseite</button>
         </NavLink>
       </div>
     </>

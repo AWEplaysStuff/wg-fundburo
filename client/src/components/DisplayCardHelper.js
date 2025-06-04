@@ -13,22 +13,22 @@ const DisplayCardHelper = ({ helper, number }) => {
 
   return (
     <div style={cardStyle}>
-      <h2>Helper Details:</h2>
-      <h2>No. {number}</h2>
+      <h2>Details des Helfers:</h2>
+      <h2>Nr. {number}</h2>
       <p>
-        <strong>Item helped for:</strong> {itemdetails}
+        <strong>Gegenstand unterstützt:</strong> {itemdetails}
       </p>
       <p>
-        <strong>Helper Name:</strong> {helpername}
+        <strong>Name des Helfers:</strong> {helpername}
       </p>
       <p>
-        <strong>Mobile Number:</strong> {mobilenumber}
+        <strong>Handynummer:</strong> {mobilenumber}
       </p>
       <p>
-        <strong>Hostel Name:</strong> {hostelname}
+        <strong>Ort:</strong> {hostelname}
       </p>
       <p>
-        <strong>Date:</strong> {new Date(date).toLocaleString()}
+        <strong>Datum:</strong> {new Date(date).toLocaleString()}
       </p>
     </div>
   );
